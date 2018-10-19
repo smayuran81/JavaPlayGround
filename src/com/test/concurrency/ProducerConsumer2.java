@@ -1,4 +1,4 @@
-package com.test.producerConsumer;
+package com.test.concurrency;
 
 import java.util.LinkedList;
 import java.util.Queue;

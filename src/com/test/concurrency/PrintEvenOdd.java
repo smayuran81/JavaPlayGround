@@ -1,4 +1,4 @@
-package com.test.producerConsumer;
+package com.test.concurrency;
 
 public class PrintEvenOdd {
 
@@ -8,8 +8,11 @@ public class PrintEvenOdd {
 		Thread t1 = new Thread(new TaskEvenOdd(print, 10, 2));
 		Thread t2 = new Thread(new TaskEvenOdd(print, 10, 3));
 
+		t1.setName("Even Thread");
+		t2.setName("Odd Thread");
 		t1.start();
 		t2.start();
+				
 	}
 }
 
@@ -68,7 +71,7 @@ class Printer {
 			}
 		}
 
-		System.out.println("Even: " + number);
+		System.out.println("Even: " + Thread.currentThread().getName() +":"+ number);
 		isOdd = true;
 		notifyAll();
 
@@ -85,7 +88,7 @@ class Printer {
 			}
 		}
 
-		System.out.println("Odd: " + number);
+		System.out.println("Odd: "+ Thread.currentThread().getName() +":" + number);
 		isOdd = false;
 		notifyAll();
 

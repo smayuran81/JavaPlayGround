@@ -1,4 +1,4 @@
-package com.test.producerConsumer;
+package com.test.concurrency;
 
 public class BlockingQueueExample {
 
